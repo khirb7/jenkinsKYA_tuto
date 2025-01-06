@@ -7,7 +7,7 @@ pipeline {
                  echo "hello world" 
          '''
             }
-        }
+        } zozo
     }
  post {
         always {
