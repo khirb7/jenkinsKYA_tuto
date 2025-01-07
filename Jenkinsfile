@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('pre-build') {
       steps {
-        echo 'pre-build step'
+        echo 'pre-build step 2025'
         sh 'whoami'
       }
     }
