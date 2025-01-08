@@ -1,12 +1,12 @@
 pipeline {
     agent any
-	environment {
-		varName = "Go"
-	}
     stages {
+      environment {
+		fname = "Go"
+	}
         stage('pre -build') {
             steps {
-                echo ' Pre-build $varName'
+                echo ' Pre-build $fname'
             }
         }
         stage('build') {
