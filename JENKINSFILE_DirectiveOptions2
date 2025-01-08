@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    options{
+             retry(3)
+            }
+    stages {
+        stage ('one') {
+           
+            steps {
+               error ('ERROR') 
+            }
+        }
+        stage ('two') {
+            steps {
+               echo 'khaled'
+            }
+        }
+    }
+}
