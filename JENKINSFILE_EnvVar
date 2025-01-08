@@ -2,12 +2,15 @@ pipeline {
     agent any
       environment {
         ACTION_VALIDATION = 'GO'
+        CREDVAR = credentails("CRED");
     }
     stages {
 
         stage('pre -build') {
             steps {
                 echo "Pre-build ${ACTION_VALIDATION}"
+                echo "hello ${CREDVAR_USR}"
+                echo "hello ${CREDVAR_PWD}"
             }
         }
         stage('build') {
