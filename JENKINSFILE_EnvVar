@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('pre -build') {
             steps {
-                echo ' Pre-build ${varName}'
+                echo ' Pre-build $varName'
             }
         }
         stage('build') {
