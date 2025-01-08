@@ -2,7 +2,7 @@ pipeline {
     agent any
       environment {
         ACTION_VALIDATION = 'GO'
-        CREDVAR = credentails("CRED");
+        CREDVAR = credentials("CRED");
     }
     stages {
 
