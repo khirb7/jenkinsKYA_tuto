@@ -1,0 +1,57 @@
+pipeline {
+    agent any
+	environment {
+		param = 'Go'
+	}
+    stages {
+        stage('pre -build') {
+            steps {
+                echo ' Pre-build ${param}'
+            }
+        }
+        stage('build') {
+            steps {
+                echo ' Build in progress. '
+            }
+        }
+        stage('Unit tests') {
+            steps {
+                echo ' Running unit tests'
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo ' Deploying build'
+            }
+        }
+        stage('Regression tests') {
+            parallel {
+                stage ('chrome') {
+                    steps {
+                         echo 'echo Running E2E tests on chrome'
+                    }
+                }
+                stage ('firefox') {
+                    steps {
+                         echo 'echo Running E2E tests on firefox'
+                    }
+                }
+                stage ('safari') {
+                    steps {
+                         echo 'echo Running E2E tests on safari'
+                    }
+                }   
+            }
+        }
+        stage('Release to prod') {
+            steps {
+                echo 'Releasing to prod'
+            }
+        }
+    }
+ post {
+        always {
+            echo 'Cleanup after everything!'
+        }
+    }
+}
