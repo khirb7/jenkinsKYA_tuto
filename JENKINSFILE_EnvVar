@@ -12,47 +12,47 @@ pipeline {
         }
         stage('build') {
             steps {
-                echo ' Build in progress. '
+                echo "Build in progress."
             }
         }
         stage('Unit tests') {
             steps {
-                echo ' Running unit tests'
+                echo "Running unit tests"
             }
         }
         stage('deploy') {
             steps {
-                echo ' Deploying build'
+                echo "Deploying build"
             }
         }
         stage('Regression tests') {
             parallel {
                 stage ('chrome') {
                     steps {
-                         echo 'echo Running E2E tests on chrome'
+                         echo "echo Running E2E tests on chrome"
                     }
                 }
                 stage ('firefox') {
                     steps {
-                         echo 'echo Running E2E tests on firefox'
+                         echo "echo Running E2E tests on firefox"
                     }
                 }
                 stage ('safari') {
                     steps {
-                         echo 'echo Running E2E tests on safari'
+                         echo "echo Running E2E tests on safari"
                     }
                 }   
             }
         }
         stage('Release to prod') {
             steps {
-                echo 'Releasing to prod'
+                echo "Releasing to prod"
             }
         }
     }
  post {
         always {
-            echo 'Cleanup after everything!'
+            echo "Cleanup after everything!"
         }
     }
 }
