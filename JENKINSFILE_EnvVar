@@ -1,9 +1,10 @@
 pipeline {
     agent any
-    stages {
       environment {
         ACTION_VALIDATION = 'GO'
     }
+    stages {
+
         stage('pre -build') {
             steps {
                 echo "Pre-build ${ACTION_VALIDATION}"
