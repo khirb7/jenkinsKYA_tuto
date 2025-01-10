@@ -11,7 +11,7 @@ pipeline {
                         sh 'hello'
 						//right syntx is  echo 'hello'
                     }
-                    catch{
+                    catch (err) {
 
                         echo 'Error occured!!!!'
                     }
