@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    environment{
+        fname = "KHALED"
+    }
+    stages {
+        stage('one') {
+            steps{
+                script{
+                    if (env.fname == 'KHALED') {
+                        echo 'HELLO KHALED'
+                    }
+                    else{
+                        echo 'I do not know you!'
+                    }
+                }
+            }
+            
+        }
+    }
+}
