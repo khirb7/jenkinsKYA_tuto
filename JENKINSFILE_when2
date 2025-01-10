@@ -17,7 +17,7 @@ pipeline {
                 }
             }
             steps {
-                echo 'Deploying ${DEPLOY_TO}'
+                sh "echo 'Deploying ${DEPLOY_TO}'"
             }
         }
     }
