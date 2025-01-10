@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    environment{
+        fname = "KHALED"
+    }
+    stages {
+        stage('one') {
+            steps{
+                script{
+                    try{
+                        sh 'hello'
+						//right syntx is  echo 'hello'
+                    }
+                    catch{
+
+                        echo 'Error occured!!!!'
+                    }
+                }
+            }
+            
+        }
+    }
+}
