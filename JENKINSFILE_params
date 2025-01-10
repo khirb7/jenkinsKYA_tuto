@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    parameters {
+        string(name: 'NAME', defaultValue: '', description: 'Enter your name')
+        choice(name: 'CITY', choices: ['Paris', 'Bordeaux', 'Lille'], description: 'Choose your city')
+		password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+		booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+		
+    }
+    stages {
+        stage('Example') {
+            steps {
+                echo "Hello ${params.NAME} of ${params.CITY} your choice is ${params.TOGGLE}"
+				echo "Password: ${params.PASSWORD}"
+            }
+        }
+    }
+}
